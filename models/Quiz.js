@@ -17,6 +17,7 @@ const QuizSchema = new Schema ({
     questions:{
         type: [Object] 
     }
+
    
         
 });
