@@ -1,16 +1,24 @@
+import React from 'react';
 import './App.css';
-import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import QuestionList from './components/QuestionList';
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './pages/home';
+import Practice from './pages/practice';
+import Profile from './pages/profile';
+import Logout from './pages/logout';
 
-class App extends Component{
-  render(){
-    return(
-      <div className="App">
-      <QuestionList/>
-    </div>
-    );
-  }
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route path='/' exact component={Home} />
+        <Route path='/practice' component={Practice} />
+        <Route path='/profile' component={Profile} />
+        <Route path='/log-out' component={Logout} />
+      </Switch>
+    </Router>
+  );
 }
 
 export default App;
