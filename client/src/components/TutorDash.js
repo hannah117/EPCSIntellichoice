@@ -3,19 +3,10 @@ import './QuestionList.css';
 import{
     Button,
     Container,
-    Modal,
-    ModalHeader,
-    ModalBody,
-    Form,
-    FormGroup,
-    Label,
-    Input,
     Row,
-    Col
-   
-   
+    Col 
 } from 'reactstrap';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+//import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import {v4 as uuid} from 'uuid';
 
 
@@ -40,24 +31,7 @@ class QuestionList extends Component {
 
 <Container >
     <Row style={{margin: '3rem'}}>
-        <Col >
-        <Button
-                className= "blocks"
-                style={{margin: '2rem', height: '16rem', width: '24rem'}}
-                onClick={() => {
-                    const topic = prompt('Enter topic');
-                    const gradeLevel = prompt('Enter grade level');
-                    const difficulty = prompt('Enter difficulty');
-                    const correctAnswer = prompt('Enter correct answer');
-                    const problem = prompt('Enter problem');
-                    if(topic && problem && gradeLevel && correctAnswer && difficulty && problem) {
-                        this.setState(state => ({
-                            questions: [...state.questions, { id: uuid(), topic, gradeLevel, difficulty, correctAnswer, problem}]
-                        }));
-                    }
-                }}
-                >Add Question</Button>
-        </Col>
+        
         
         <Col>
         <Button

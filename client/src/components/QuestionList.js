@@ -3,19 +3,12 @@ import './QuestionList.css';
 import{
     Button,
     Container,
-    Modal,
-    ModalHeader,
-    ModalBody,
-    Form,
-    FormGroup,
-    Label,
-    Input,
     Row,
     Col
    
    
 } from 'reactstrap';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+//import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import {v4 as uuid} from 'uuid';
 
 
