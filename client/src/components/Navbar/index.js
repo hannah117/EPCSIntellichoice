@@ -26,7 +26,7 @@ const Navbar = () => {
             Profile
           </NavLink>
           <NavBtnLink to='/logout'>
-            Log Out
+            Quit
           </NavBtnLink>
         </NavMenu>
       </Nav>
