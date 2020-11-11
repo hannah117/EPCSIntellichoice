@@ -69,7 +69,7 @@ export default class addQuestion extends Component {
             
         }
 
-        axios.post('/', newQuestion)
+        axios.post('http://localhost:3000/api/questions', newQuestion)
             .then((res) => {
                 console.log(res.data)
             }).catch((err) => {
