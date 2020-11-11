@@ -1,0 +1,12 @@
+.SubjectBox{
+    float:left;
+    width:25%;
+    margin:100px;
+    padding: 15px;
+    height: 200px;
+}
+
+.text{
+    color:white;
+    text-align:center;
+}
