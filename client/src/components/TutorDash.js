@@ -19,7 +19,6 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import {v4 as uuid} from 'uuid';
 
 
-
 class QuestionList extends Component {
     state = {
 
@@ -58,7 +57,6 @@ class QuestionList extends Component {
                     }
                 }}
                 >Add Question</Button>
-                
         </Col>
         
         <Col>

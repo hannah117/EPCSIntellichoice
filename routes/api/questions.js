@@ -36,4 +36,16 @@ router.post('/', (req, res) =>{
 });
 
 
+//@route delete api/questions
+//@desc delete questions
+//@acces public
+
+
+router.delete('/:id', (req, res)=> {
+    Question.findById(req.params.id)
+    .then(question =>question.remove().then(() => res.json({success: true})))
+    .catch(err =>res.status(404).json({succuss: false}));
+});
+
+
 module.exports = router;
