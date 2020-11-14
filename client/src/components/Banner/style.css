@@ -1,14 +1,12 @@
 .banner{
     height:125px;
-    position:relative
 }
 
 #banner-text{
     color:white;
     font-size:40px;
-    position:absolute;
-    margin-top:35px;
-    margin-left:5%;
+    text-align:center;
+    padding-top:35px;
 }
 
 .practice {

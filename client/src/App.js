@@ -12,6 +12,7 @@ import addQuestion from './components/addQuestion';
 import GetQuestions from './components/GetQuestions';
 
 
+import Addition from './pages/addition';
 
 function App() {
   return (
@@ -21,10 +22,11 @@ function App() {
         <Route path='/' exact component={Home} />
         <Route path='/practice' component={Practice} />
         <Route path='/profile' component={Profile} />
-        <Route path='/log-out' component={Logout} />
+        <Route path='/logout' component={Logout} />
         <Route path='/list'  component={QuestionList}/>
         <Route path='/add'  component={addQuestion}/>
         <Route path='/getQuestions' component={GetQuestions}/>
+        <Route path='/addition' component={Addition}/>
       </Switch>
     </Router>
   );
