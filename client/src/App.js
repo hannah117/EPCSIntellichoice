@@ -9,6 +9,8 @@ import Logout from './pages/logout';
 import QuestionList from './components/QuestionList';
 import addQuestion from './components/addQuestion';
 
+import GetQuestions from './components/GetQuestions';
+
 
 
 function App() {
@@ -22,7 +24,7 @@ function App() {
         <Route path='/log-out' component={Logout} />
         <Route path='/list'  component={QuestionList}/>
         <Route path='/add'  component={addQuestion}/>
-
+        <Route path='/getQuestions' component={GetQuestions}/>
       </Switch>
     </Router>
   );

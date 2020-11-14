@@ -31,7 +31,9 @@ router.post('/', (req, res) =>{
        difficulty: req.body.difficulty
    });
 
-   newQuestion.save().then(question => res.json(question));
+   newQuestion.save().then(question => {
+       return res.json(question);
+   });
 
 });
 
