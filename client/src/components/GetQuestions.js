@@ -8,7 +8,7 @@ export default class GetQuestions extends Component {
         super(props);
         this.state = { questions: [] };
     }
-
+    
     componentDidMount() {
         axios.get('http://localhost:3000/api/questions')
             .then(res => {
@@ -19,8 +19,23 @@ export default class GetQuestions extends Component {
             })
     }
     
-    questionTable() {
-        const ques = this.state.questions.filter(question => question.topic === "fractions");
+    questionTableFiltered(subject) {
+        const ques = this.state.questions.filter(question => question.topic === subject);
+        return (ques.map((data, i) => {
+            return <QuestionTable obj={data} key={i} />;
+        }));
+    }
+
+    gradeTableFiltered(grade, subject) {
+        let ques = this.state.questions.filter(question => question.gradeLevel === grade);
+        ques = ques.filter(ques=>ques.topic = subject);
+        return (ques.map((data, i) => {
+            return <QuestionTable obj={data} key={i} />;
+        }));
+    }
+
+    questionTableAll(subject) {
+        const ques = this.state.questions;
         return (ques.map((data, i) => {
             return <QuestionTable obj={data} key={i} />;
         }));
@@ -42,7 +57,7 @@ export default class GetQuestions extends Component {
                             </tr>
                         </thead>
                         <tbody>
-                            {this.questionTable()}
+                            {this.questionTableAll()}
                         </tbody>
                     </table>
                 </div>
