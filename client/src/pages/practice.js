@@ -7,8 +7,15 @@ const Practice = () => {
     return (
         <>
             <Banner text="Practice" color='#4CAF50'></Banner>
-            <Subject text="Addition" color='#C83131'></Subject>
-            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh'}}>
+            <div style={{margin:'0 20%'}}>
+                <a href='./addition'><Subject text="Addition" symbol="+" color='#C83131'></Subject></a>
+                <Subject text="Subtraction" symbol="—" color='#EABC00'></Subject>
+                <Subject text="Multiplication" symbol="×" color='#F39317'></Subject>
+                <Subject text="Division" symbol="÷" color='#00B971'></Subject>
+                <Subject text="Fraction" symbol="/" color='#00A1DE'></Subject>
+                <Subject text="Decimal" symbol="●" color='#8D33AA'></Subject>
+            </div>
+            <div style={{clear: 'both', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh'}}>
                 <h1>Practice</h1>
             </div>
         </>
