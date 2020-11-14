@@ -3,19 +3,10 @@ import './QuestionList.css';
 import{
     Button,
     Container,
-    Modal,
-    ModalHeader,
-    ModalBody,
-    Form,
-    FormGroup,
-    Label,
-    Input,
     Row,
     Col
-   
-   
 } from 'reactstrap';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
 import {v4 as uuid} from 'uuid';
 
 
@@ -32,7 +23,7 @@ class QuestionList extends Component {
     }
 
     render() {
-        const { questions } = this.state;
+       // const { questions } = this.state;
 
         return(
             <Container>
