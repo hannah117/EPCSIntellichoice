@@ -8,6 +8,9 @@ class QuestionTable extends Component {
                     {this.props.obj.topic}
                 </td>
                 <td>
+                    {this.props.obj.subtopic}
+                </td>
+                <td>
                     {this.props.obj.problem}
                 </td>
                 <td>

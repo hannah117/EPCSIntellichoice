@@ -25,6 +25,7 @@ router.get('/', (req, res) =>{
 router.post('/', (req, res) =>{
    const newQuestion = new Question({
        topic: req.body.topic,
+       subtopic: req.body.subtopic,
        problem: req.body.problem,
        correctAnswer: req.body.correctAnswer,
        gradeLevel: req.body.gradeLevel,

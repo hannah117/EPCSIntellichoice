@@ -5,6 +5,7 @@ export default class addQuestion extends Component {
     constructor(props){
         super(props);
         this.onChangeTopic = this.onChangeTopic.bind(this);
+        this.onChangeSubtopic = this.onChangeSubtopic.bind(this);
         this.onChangeProblem = this.onChangeProblem.bind(this);
         this.onChangeCorrectAnswer= this.onChangeCorrectAnswer.bind(this);
         this.onChangeDifficulty = this.onChangeDifficulty.bind(this);
@@ -12,8 +13,9 @@ export default class addQuestion extends Component {
         this.onSubmit = this.onSubmit.bind(this);
         this.state = {
             topic: '',
+            subtopic: '',
             problem: '',
-            correctAnswer: '',
+            correctAnswer: '', 
             difficulty: '',
             gradeLevel: ''
 
@@ -21,9 +23,16 @@ export default class addQuestion extends Component {
 
     }
 
+  
+
     onChangeTopic(e){
         this.setState({
             topic: e.target.value
+        });
+    }
+    onChangeSubtopic(e){
+        this.setState({
+            subtopic: e.target.value
         });
     }
     onChangeProblem(e){
@@ -53,6 +62,7 @@ export default class addQuestion extends Component {
 
         console.log(`Form submitted:`);
         console.log(`Question Topic: ${this.state.topic}`);
+        console.log(`Question Subtopic: ${this.state.Subtopic}`);
         console.log(`Question Problem: ${this.state.problem}`);
         console.log(`Question Correct Answer: ${this.state.correctAnswer}`);
         console.log(`Question Difficulty: ${this.state.difficulty}`);
@@ -62,6 +72,7 @@ export default class addQuestion extends Component {
 
         const newQuestion = {
             topic: this.state.topic,
+            subtopic: this.state.subtopic,
             problem: this.state.problem,
             correctAnswer: this.state.correctAnswer,
             difficulty: this.state.difficulty,
@@ -79,6 +90,7 @@ export default class addQuestion extends Component {
         /***********************************************************************/
         this.setState ({
             topic: '',
+            subtopic: '',
             problem: '',
             correctAnswer: '',
             difficulty: '',
@@ -98,6 +110,13 @@ export default class addQuestion extends Component {
                             className="form-control"
                             value={this.state.topic}
                             onChange={this.onChangeTopic}/>
+                    </div>
+                    <div className="form-group">
+                    <label>Subtopic: </label>
+                    <input  type="text"
+                            className="form-control"
+                            value={this.state.subtopic}
+                            onChange={this.onChangeSubtopic}/>
                     </div>
                     <div className="form-group">
                     <label>Problem: </label>

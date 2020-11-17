@@ -9,7 +9,10 @@ const QuestionSchema = new Schema ({
         type: String,
         required: true
     },
-    //subtopic:
+    subtopic:{
+        type: String,
+        required: true
+    },
     problem:{
         type: String,
         required: true

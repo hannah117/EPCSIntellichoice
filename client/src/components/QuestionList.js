@@ -37,13 +37,14 @@ class QuestionList extends Component {
                 style={{margin: '2rem', height: '16rem', width: '24rem'}}
                 onClick={() => {
                     const topic = prompt('Enter topic');
+                    const subtopic = prompt('Enter subtopic');
                     const gradeLevel = prompt('Enter grade level');
                     const difficulty = prompt('Enter difficulty');
                     const correctAnswer = prompt('Enter correct answer');
                     const problem = prompt('Enter problem');
-                    if(topic && problem && gradeLevel && correctAnswer && difficulty && problem) {
+                    if(topic &&subtopic&& problem && gradeLevel && correctAnswer && difficulty && problem) {
                         this.setState(state => ({
-                            questions: [...state.questions, { id: uuid(), topic, gradeLevel, difficulty, correctAnswer, problem}]
+                            questions: [...state.questions, { id: uuid(), topic,subtopic, gradeLevel, difficulty, correctAnswer, problem}]
                         }));
                     }
                 }}
