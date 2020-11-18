@@ -26,8 +26,7 @@ class QuestionList extends Component {
         const { questions } = this.state;
 
         return(
-            <Container>
-             
+          
 
 <Container >
     <Row style={{margin: '3rem'}}>
@@ -59,7 +58,7 @@ style={{ margin: '2rem',height: '16rem', width: '24rem'}}>
     </Row>
 
 </Container>
-</Container>
+
 
 
         );

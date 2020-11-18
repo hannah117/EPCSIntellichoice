@@ -9,11 +9,16 @@ import Logout from './pages/logout';
 import QuestionList from './components/QuestionList';
 import addQuestion from './components/addQuestion';
 import GetQuestions from './components/GetQuestions';
+import topicPage from './pages/topicPage';
+import subtopicPage from './pages/subtopicPage';
+import testing from './pages/testing';
 
 
 
 function App() {
+  let topicName = 'addition';
   return (
+    
     <Router>
       <Navbar />
       <Switch>
@@ -24,7 +29,10 @@ function App() {
         <Route path='/list'  component={QuestionList}/>
         <Route path='/add'  component={addQuestion}/>
         <Route path='/getQuestions' component={GetQuestions}/>
-
+        <Route path='/addition' component={Addition}/>
+        <Route path='/topics' component= {topicPage}/>
+        <Route path='/testing' component= {testing(topicName)}/>
+        <Route path='/subtopics' component= {subtopicPage}/>
       </Switch>
     </Router>
   );

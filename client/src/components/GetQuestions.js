@@ -32,8 +32,8 @@ export default class GetQuestions extends Component {
                     <table className="table table-striped table-dark">
                         <thead className="thead-dark">
                             <tr>
-                                <td>ID</td>
                                 <td>Topic</td>
+                                <td>Subtopic</td>
                                 <td>Problem</td>
                                 <td>COrrect Answer</td>
                                 <td>Difficulty</td>
