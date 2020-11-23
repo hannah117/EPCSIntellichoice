@@ -8,11 +8,11 @@ import Profile from './pages/profile';
 import Logout from './pages/logout';
 import QuestionList from './components/QuestionList';
 import addQuestion from './components/addQuestion';
-
 import GetQuestions from './components/GetQuestions';
-
-
 import Addition from './pages/addition';
+import Subtraction from './pages/subtraction';
+import Multiplication from './pages/multiplication';
+import Division from './pages/division';
 
 function App() {
   return (
@@ -27,6 +27,9 @@ function App() {
         <Route path='/add'  component={addQuestion}/>
         <Route path='/getQuestions' component={GetQuestions}/>
         <Route path='/addition' component={Addition}/>
+        <Route path='/subtraction' component={Subtraction}/>
+        <Route path='/multiplication' component={Multiplication}/>
+        <Route path='/division' component={Division}/>
       </Switch>
     </Router>
   );
