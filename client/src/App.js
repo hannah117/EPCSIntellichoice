@@ -8,8 +8,9 @@ import Profile from './pages/profile';
 import Logout from './pages/logout';
 import QuestionList from './components/QuestionList';
 import addQuestion from './components/addQuestion';
-
+import subtopicPage from './pages/subtopicPage';
 import GetQuestions from './components/GetQuestions';
+import topicPage from './pages/topicPage';
 
 
 import Addition from './pages/addition';
@@ -21,6 +22,8 @@ function App() {
       <Switch>
         <Route path='/' exact component={Home} />
         <Route path='/practice' component={Practice} />
+        <Route path='/topicPage' component={topicPage} />
+        <Route path='/subtopicPage' component={subtopicPage} />
         <Route path='/profile' component={Profile} />
         <Route path='/logout' component={Logout} />
         <Route path='/list'  component={QuestionList}/>
