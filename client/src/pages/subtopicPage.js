@@ -1,70 +1,71 @@
-import React, {Button}  from 'react'
-import {Component} from 'react'
+import React, { Component } from 'react'
 import axios from 'axios'
 import Banner from '../components/Banner'
 import '../components/Banner/style.css'
 import Subject from '../components/Subjects'
-import {BrowserRouter, Link, Redirect, Route, Router} from 'react-router-dom';
-import subTopicPage from './subtopicPage'
+import topicPage from '../pages/topicPage'
 
-export default class topicPage extends Component{
-
-
+export default class subTopicPage extends Component{
     constructor(props) {
         super(props);
-        this.state = { grade: '2' , topics: [], questions: [], subtopics: []};
+        this.state = { 
+                       //subtopics: this.props.location.state.subtopics, 
+                       topic: this.props.location.state.topic,
+                       grade: this.props.location.state.grade,
+                        subtopics: []};
     }
 
     
     componentDidMount() {
-        //let ques = [];
+        let ques = [];
         axios.get('http://localhost:3000/api/questions')
             .then(res => {
-          
-               // this.state.questions = res.data.filter(question => question.gradeLevel === this.state.grade).map(a => a.topic);
-                this.setState({ questions: res.data.filter(question => question.gradeLevel === this.state.grade)});
-                this.setState({ topics: this.state.questions.map(a => a.topic) });
-
-
+                console.log(this.state.topic);
+                ques = res.data;
+                ques = ques.filter(question =>question.gradeLevel === this.state.grade && question.topic === this.state.topic);
+                ques = ques.map(a => a.subtopic);
+                this.setState({ subtopics: ques });
+               // console.log('hello');
                // console.log(ques);
             })
             .catch(function (error) {
                 console.log(error);
             })
-          
+            return ques;
     };
 
     onClick = ({value}) =>{
 
 
-        this.setState({ subtopics: this.state.questions.filter(question => question.topic === value).map(a => a.subtopic) });
+       // this.setState({ subtopics: this.state.questions.filter(question => question.topic === value).map(a => a.subtopic) });
       //  this.setState({ topics: this.state.questions.filter(question => question.topic === value).map(a => a.subtopic) });
      
     console.log(this.state.subtopics);
         //route to next page
-    this.props.history.push({
+    /*this.props.history.push({
         pathname: '/subtopics',
         state: {  topic: value,
                 grade: this.state.grade }}
-        );
+        );*/
 
       };
+
+
 
     render(){
         return (
         <>
         <Banner text="Practice" color='#4CAF50'></Banner>
-        
         <div style={{margin:'0 20%'}}>
-            {this.state.topics.map((value,index)=> {
+           {console.log(this.state.grade)}
+
+           {this.state.subtopics.map((value,index)=> {
              return <button key={index} onClick = {this.onClick.bind(this, {value})}>
                      <Subject key={index} text={value} color='#F39317'></Subject>
                     </button>                  
             })}
-       
         </div>
-        
         </>
     )
-}
+    }
 }

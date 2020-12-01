@@ -10,11 +10,17 @@ import QuestionList from './components/QuestionList';
 import addQuestion from './components/addQuestion';
 
 import GetQuestions from './components/GetQuestions';
+import topicPage from './pages/topicPage';
+import subtopicPage from './pages/subtopicPage';
+import testing from './pages/testing';
+import getList from './pages/getList';
 
 
 import Addition from './pages/addition';
 
 function App() {
+  let topicName = 'addition';
+  let topics = getList('2', topicName);
   return (
     <Router>
       <Navbar />
@@ -26,7 +32,10 @@ function App() {
         <Route path='/list'  component={QuestionList}/>
         <Route path='/add'  component={addQuestion}/>
         <Route path='/getQuestions' component={GetQuestions}/>
-        <Route path='/addition' component={Addition}/>
+       
+        <Route path='/topics' component= {topicPage}/>
+        <Route path='/testing' element= {testing(topics)}/>
+        <Route path='/subtopics' component= {subtopicPage}/>
       </Switch>
     </Router>
   );
