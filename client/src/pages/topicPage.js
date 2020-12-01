@@ -1,11 +1,14 @@
-import React, {Button}  from 'react'
+import React  from 'react'
 import {Component} from 'react'
+import{
+    Button,
+  
+} from 'reactstrap';
 import axios from 'axios'
 import Banner from '../components/Banner'
 import '../components/Banner/style.css'
 import Subject from '../components/Subjects'
-import {BrowserRouter, Link, Redirect, Route, Router} from 'react-router-dom';
-import subTopicPage from './subtopicPage'
+
 
 export default class topicPage extends Component{
 
@@ -55,15 +58,14 @@ export default class topicPage extends Component{
         <>
         <Banner text="Practice" color='#4CAF50'></Banner>
         
-        <div style={{margin:'0 20%'}}>
+  
             {this.state.topics.map((value,index)=> {
-             return <button key={index} onClick = {this.onClick.bind(this, {value})}>
+             return <div  style={{margin:'0 20%', display: 'flex', justifyContent: 'center', alignItems: 'center'}} key={index} onClick = {this.onClick.bind(this, {value})}>
                      <Subject key={index} text={value} color='#F39317'></Subject>
-                    </button>                  
+                    </div>                  
             })}
        
-        </div>
-        
+      
         </>
     )
     }

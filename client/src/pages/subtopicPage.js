@@ -54,18 +54,18 @@ export default class subTopicPage extends Component{
 
     render(){
         return (
-        <>
-        <Banner text="Practice" color='#4CAF50'></Banner>
-        <div style={{margin:'0 20%'}}>
-           {console.log(this.state.grade)}
-
-           {this.state.subtopics.map((value,index)=> {
-             return <button key={index} onClick = {this.onClick.bind(this, {value})}>
-                     <Subject key={index} text={value} color='#F39317'></Subject>
-                    </button>                  
-            })}
-        </div>
-        </>
+            <>
+            <Banner text="Practice" color='#4CAF50'></Banner>
+            
+      
+                {this.state.subtopics.map((value,index)=> {
+                 return <div  style={{margin:'0 20%', display: 'flex', justifyContent: 'center', alignItems: 'center'}} key={index} onClick = {this.onClick.bind(this, {value})}>
+                         <Subject key={index} text={value} color='#F39317'></Subject>
+                        </div>                  
+                })}
+           
+          
+            </>
     )
     }
 }

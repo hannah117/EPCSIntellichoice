@@ -1,9 +1,9 @@
 
-import axios from 'axios'
+
 import Banner from '../components/Banner'
 import '../components/Banner/style.css'
 import Subject from '../components/Subjects'
-import getList from '../pages/getList'
+
 
 const testing = (subtopicList) => {
     let list = subtopicList;
