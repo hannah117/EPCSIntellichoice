@@ -1,10 +1,12 @@
 import React from 'react';
 import './style.css'
+import SubmissionBox from './submission_box'
+import Form from './form'
 
-const Question = ({symbol, max}) => {
+const Question = ({symbol, max1, max2}) => {
     
-    var num1 = Math.floor(Math.random() * Math.floor(max));
-    var num2 = Math.floor(Math.random() * Math.floor(max));
+    var num1 = Math.floor(Math.random() * Math.floor(max1));
+    var num2 = Math.floor(Math.random() * Math.floor(max2));
     var answer = 0
 
     if (symbol === "+") {
@@ -12,8 +14,8 @@ const Question = ({symbol, max}) => {
     }
     else if (symbol === '-') {
         while (num1 < num2) {
-            num1 = Math.floor(Math.random() * Math.floor(max));
-            num2 = Math.floor(Math.random() * Math.floor(max));
+            num1 = Math.floor(Math.random() * Math.floor(max1));
+            num2 = Math.floor(Math.random() * Math.floor(max2));
         }
         answer = num1 - num2;
     }
@@ -22,8 +24,8 @@ const Question = ({symbol, max}) => {
     }
     else if (symbol === '÷' || symbol === '/') {
         while (num1 % num2 != 0) {
-            num1 = Math.floor(Math.random() * Math.floor(max));
-            num2 = Math.floor(Math.random() * Math.floor(max));
+            num1 = Math.floor(Math.random() * Math.floor(max1));
+            num2 = Math.floor(Math.random() * Math.floor(max2));
         }
         if (symbol === '/')
             symbol = '÷'; 
@@ -32,14 +34,7 @@ const Question = ({symbol, max}) => {
 
     return(
         <>
-            <h1>What is {num1} {symbol} {num2} = ?</h1>
-            
-            <form>
-                <input type="text" id="input-answer" name="input-answer" placeholder="Enter your answer here" value='value'></input>
-                <input type="submit" value="Submit"></input>
-            </form>
-
-            <h1>Answer: {answer}</h1>
+            <SubmissionBox num1={num1} num2={num2} funct={symbol} answer={answer}/>
         </>
     )
 }

@@ -66,5 +66,6 @@ export default class topicPage extends Component{
         
         </>
     )
+    }
 }
-}
+

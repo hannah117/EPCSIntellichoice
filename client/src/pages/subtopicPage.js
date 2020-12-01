@@ -3,7 +3,7 @@ import axios from 'axios'
 import Banner from '../components/Banner'
 import '../components/Banner/style.css'
 import Subject from '../components/Subjects'
-import topicPage from '../pages/topicPage'
+
 
 export default class subTopicPage extends Component{
     constructor(props) {
