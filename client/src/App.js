@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/home';
 import Practice from './pages/practice';
+
 import Profile from './pages/profile';
 import Logout from './pages/logout';
 import QuestionList from './components/QuestionList';
@@ -30,7 +31,7 @@ function App() {
         <Route path='/list'  component={QuestionList}/>
         <Route path='/add'  component={addQuestion}/>
         <Route path='/getQuestions' component={GetQuestions}/>
-       
+     
         <Route path='/topics' component= {topicPage}/>
         <Route path='/testing' element= {testing(topics)}/>
         <Route path='/subtopics' component= {subtopicPage}/>
