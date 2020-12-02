@@ -13,7 +13,7 @@ const SubmissionBox = ({num1, num2, funct, answer}) => {
         const correct = (answer == guess);
         if (correct) {
             var result = document.getElementById("result");
-            result.innerHTML = "CORRECT ANSWER";
+            result.innerHTML = "Excellent Work!";
             result.style.fontSize = "50px";
             result.style.fontWeight = "bold";
             result.style.color = "#4CAF50";
@@ -21,7 +21,7 @@ const SubmissionBox = ({num1, num2, funct, answer}) => {
         }
         else {
             var result = document.getElementById("result");
-            result.innerHTML = "INCORRECT ANSWER";
+            result.innerHTML = "Not quite, try again!";
             result.style.fontSize = "50px";
             result.style.fontWeight = "bold";
             result.style.color = "#C83131";

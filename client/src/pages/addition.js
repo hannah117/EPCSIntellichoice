@@ -8,9 +8,9 @@ const Addition = () => {
         <>
             <Banner text="Addition" color='#C83131'></Banner>
             <Question symbol = "+" max1 = '1000' max2 ='1000'></Question>
-            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh'}}>
+            {/* <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh'}}>
                 <h1>Addition</h1>
-            </div>
+            </div> */}
         </>
     )
 }

@@ -15,9 +15,9 @@ const Practice = () => {
                 <Subject text="Fraction" symbol="/" color='#00A1DE'></Subject>
                 <Subject text="Decimal" symbol="●" color='#8D33AA'></Subject>
             </div>
-            <div style={{clear: 'both', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh'}}>
+            {/* <div style={{clear: 'both', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh'}}>
                 <h1>Practice</h1>
-            </div>
+            </div> */}
         </>
     )
 }

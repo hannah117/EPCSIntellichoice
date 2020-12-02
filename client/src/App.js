@@ -13,6 +13,10 @@ import GetQuestions from './components/GetQuestions';
 import topicPage from './pages/topicPage';
 import testing from './pages/testing';
 import getList from './pages/getList';
+import addition from './pages/addition';
+import subtraction from './pages/subtraction';
+import multiplication from './pages/multiplication';
+import division from './pages/division';
 
 function App() {
   let topicName = 'addition';
@@ -34,6 +38,10 @@ function App() {
         <Route path='/topics' component= {topicPage}/>
         <Route path='/testing' element= {testing(topics)}/>
         <Route path='/subtopics' component= {subtopicPage}/>
+        <Route path='/addition' component = {addition}/>
+        <Route path='/subtraction' component = {subtraction}/>
+        <Route path='/multiplication' component = {multiplication}/>
+        <Route path='/division' component = {division}/>
       </Switch>
     </Router>
   );
