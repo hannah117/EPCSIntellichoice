@@ -14,6 +14,7 @@ const Practice = () => {
                 <a href='./division'><Subject text="Division" symbol="÷" color='#00B971'></Subject></a>
                 <Subject text="Fraction" symbol="/" color='#00A1DE'></Subject>
                 <Subject text="Decimal" symbol="●" color='#8D33AA'></Subject>
+                
             </div>
             {/* <div style={{clear: 'both', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh'}}>
                 <h1>Practice</h1>
