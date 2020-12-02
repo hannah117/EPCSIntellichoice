@@ -1,4 +1,4 @@
-import React from 'react'
+
 import generate_number from './generate_number'
 
 const addition_function = ({num1, num2}) => {
@@ -23,7 +23,7 @@ const multiplication_function = ({num1, num2}) => {
 
 const division_function = ({num1, num2, max1, max2}) => {
 
-    while (num1 % num2 != 0 || num2 == 1 || num1 == 0) {
+    while (num1 % num2 !== 0 || num2 === 1 || num1 === 0) {
         num1 = generate_number(max1);
         num2 = generate_number(max2);
     }

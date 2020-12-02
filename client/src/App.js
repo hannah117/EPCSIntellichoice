@@ -15,9 +15,7 @@ import topicPage from './pages/topicPage';
 import testing from './pages/testing';
 import getList from './pages/getList';
 import addition from './pages/addition';
-import subtraction from './pages/subtraction';
-import multiplication from './pages/multiplication';
-import division from './pages/division';
+
 
 function App() {
   let topicName = 'addition';
@@ -40,9 +38,9 @@ function App() {
         <Route path='/testing' element= {testing(topics)}/>
         <Route path='/subtopics' component= {subtopicPage}/>
         <Route path='/addition' component = {addition}/>
-        <Route path='/subtraction' component = {subtraction}/>
-        <Route path='/multiplication' component = {multiplication}/>
-        <Route path='/division' component = {division}/>
+        <Route path='/subtraction' component = {addition}/>
+        <Route path='/multiplication' component = {addition}/>
+        <Route path='/division' component = {addition}/>
       </Switch>
     </Router>
   );

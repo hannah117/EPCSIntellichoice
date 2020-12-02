@@ -1,9 +1,6 @@
 import React  from 'react'
 import {Component} from 'react'
-import{
-    Button,
-  
-} from 'reactstrap';
+
 import axios from 'axios'
 import Banner from '../components/Banner'
 import '../components/Banner/style.css'
@@ -18,24 +15,33 @@ export default class topicPage extends Component{
         this.state = { grade: '2' , topics: [], questions: [], subtopics: []};
     }
 
-    
+    onlyUnique(value, index, self) {
+        return self.indexOf(value) === index;
+      }
+      
     componentDidMount() {
         //let ques = [];
-        axios.get('http://localhost:3000/api/questions')
+        axios.get('./api/questions')
             .then(res => {
           
                // this.state.questions = res.data.filter(question => question.gradeLevel === this.state.grade).map(a => a.topic);
                 this.setState({ questions: res.data.filter(question => question.gradeLevel === this.state.grade)});
                 this.setState({ topics: this.state.questions.map(a => a.topic) });
-
-
                // console.log(ques);
             })
             .catch(function (error) {
                 console.log(error);
             })
           
+
+
+            this.setState({ topics: this.state.topics.filter(this.onlyUnique)});
+
+          
     };
+
+    
+   
 
     onClick = ({value}) =>{
 
@@ -48,7 +54,8 @@ export default class topicPage extends Component{
     this.props.history.push({
         pathname: '/subtopics',
         state: {  topic: value,
-                grade: this.state.grade }}
+                grade: this.state.grade,
+                questions: this.state.questions  }}
         );
 
       };
@@ -59,7 +66,9 @@ export default class topicPage extends Component{
         <Banner text="Practice" color='#4CAF50'></Banner>
         
   
-            {this.state.topics.map((value,index)=> {
+            {this.state.topics.filter(this.onlyUnique).map((value,index)=> {
+            //var rand = 'rgb(' + (Math.floor((256) * Math.random()) ) + ',' + (Math.floor((256) * Math.random()) ) + ',' + (Math.floor((256 ) * Math.random()) ) + ')';
+
              return <div style={{margin:'0 20%'}}>
                     <div class='subjectBox' key={index} onClick = {this.onClick.bind(this, {value})}>
                         <Subject key={index} text={value} color='#F39317'></Subject>
