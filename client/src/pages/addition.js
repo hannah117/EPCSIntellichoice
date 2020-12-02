@@ -3,6 +3,7 @@ import Banner from '../components/Banner';
 import Question from '../components/Question';
 
 const Addition = () => {
+
     return (
         <>
             <Banner text="Addition" color='#C83131'></Banner>
