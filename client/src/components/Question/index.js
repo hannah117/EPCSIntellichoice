@@ -4,8 +4,7 @@ import SubmissionBox from './submission_box'
 import answer_function from './functions/math_function'
 
 const Question = ({symbol, max1, max2}) => {
-
-    const questionInfo = answer_function({max1, max2, symbol});
+const questionInfo = answer_function({max1, max2, symbol});
 
     return(
         <>
