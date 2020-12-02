@@ -7,9 +7,9 @@ const Multiplication = () => {
         <>
             <Banner text="Multiplication" color='#F39317'></Banner>
             <Question symbol = "*" max1 = '100' max2 = '10'></Question>
-            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh'}}>
+            {/* <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh'}}>
                 <h1>Multiplication</h1>
-            </div>
+            </div> */}
         </>
     )
 }

@@ -7,9 +7,9 @@ const Subtraction = () => {
         <>
             <Banner text="Subtraction" color='#EABC00'></Banner>
             <Question symbol = "-" max1 = '100' max2 = '100'></Question>
-            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh'}}>
+            {/* <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh'}}>
                 <h1>Subtraction</h1>
-            </div>
+            </div> */}
         </>
     )
 }
