@@ -1,10 +1,11 @@
-
-
 import Banner from '../components/Banner'
 import '../components/Banner/style.css'
 import Subject from '../components/Subjects'
 
-
+/**
+ * 
+ * file is used to test adjusting user display to user profile. Can be changed. 
+ */
 const testing = (subtopicList) => {
     let list = subtopicList;
 return ( 
