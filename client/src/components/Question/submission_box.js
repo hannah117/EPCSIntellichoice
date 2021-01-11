@@ -42,7 +42,6 @@ const SubmissionBox = ({num1, num2, funct, answer}) => {
             </Grid>
 
             <div id="result" style = {{margin: 'auto', align: 'center', textAlign: "center"}}>
-                
             </div>
         </>
     )
