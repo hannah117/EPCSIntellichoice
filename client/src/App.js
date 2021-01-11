@@ -7,10 +7,10 @@ import Practice from './pages/practice';
 
 import Profile from './pages/profile';
 import Logout from './pages/logout';
-import QuestionList from './components/QuestionList';
+
 import addQuestion from './components/addQuestion';
 import subtopicPage from './pages/subtopicPage';
-import GetQuestions from './components/GetQuestions';
+
 import topicPage from './pages/topicPage';
 import testing from './pages/testing';
 import getList from './pages/getList';
@@ -30,9 +30,9 @@ function App() {
         <Route path='/subtopicPage' component={subtopicPage} />
         <Route path='/profile' component={Profile} />
         <Route path='/logout' component={Logout} />
-        <Route path='/list'  component={QuestionList}/>
+       
         <Route path='/add'  component={addQuestion}/>
-        <Route path='/getQuestions' component={GetQuestions}/>
+        
      
         <Route path='/topics' component= {topicPage}/>
         <Route path='/testing' element= {testing(topics)}/>

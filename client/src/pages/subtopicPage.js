@@ -145,8 +145,6 @@ export default class subTopicPage extends Component{
                         </div>
                     </div>                  
                 })}
-           
-          
             </>
     )
     

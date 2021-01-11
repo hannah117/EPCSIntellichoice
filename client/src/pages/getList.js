@@ -8,12 +8,8 @@ export default function getList(grade , topicName) {        //receives student g
         .then(res => {
             ques = res.data
             ques = ques.filter(question =>question.gradeLevel === '2' && question.topic === 'addition');
-            console.log(ques);
+         
             ques = ques.map(a => a.subtopic);
-        
-            //console.log(subtopics);
-           // console.log('hello');
-           // console.log(ques);
         })
         .catch(function (error) {
             console.log(error);
