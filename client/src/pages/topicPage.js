@@ -20,14 +20,13 @@ export default class topicPage extends Component{
       }
       
     componentDidMount() {
-        //let ques = [];
         axios.get('./api/questions')
             .then(res => {
           
-               // this.state.questions = res.data.filter(question => question.gradeLevel === this.state.grade).map(a => a.topic);
+      
                 this.setState({ questions: res.data.filter(question => question.gradeLevel === this.state.grade)});
                 this.setState({ topics: this.state.questions.map(a => a.topic) });
-               // console.log(ques);
+    
             })
             .catch(function (error) {
                 console.log(error);
@@ -44,18 +43,17 @@ export default class topicPage extends Component{
    
 
     onClick = ({value}) =>{
-
-
+        //adjust questions to be passed according to value selected
         this.setState({ subtopics: this.state.questions.filter(question => question.topic === value).map(a => a.subtopic) });
-      //  this.setState({ topics: this.state.questions.filter(question => question.topic === value).map(a => a.subtopic) });
-     
-    console.log(this.state.subtopics);
-        //route to next page
-    this.props.history.push({
+    
+    //route to next page
+    this.props.history.push({                           //pushes topic, grade, and questions to /subtopics page
         pathname: '/subtopics',
-        state: {  topic: value,
+        state: {  
+                topic: value,
                 grade: this.state.grade,
-                questions: this.state.questions  }}
+                questions: this.state.questions 
+             }}
         );
 
       };
@@ -64,11 +62,16 @@ export default class topicPage extends Component{
         return (
         <>
         <Banner text="Practice" color='#4CAF50'></Banner>
-        
-  
-            {this.state.topics.filter(this.onlyUnique).map((value,index)=> {
+            {this.state.topics.filter(this.onlyUnique).map((value,index)=> { //filters database questions to display only unique topics. 
+            
             //var rand = 'rgb(' + (Math.floor((256) * Math.random()) ) + ',' + (Math.floor((256) * Math.random()) ) + ',' + (Math.floor((256 ) * Math.random()) ) + ')';
 
+            /* 
+
+            Each topic is displayed with same styling in separate box. 
+            this.onClick.bind passes topic in value to onClick function and sends info to next page
+            
+            */
              return <div style={{margin:'0 20%'}}>
                     <div class='subjectBox' key={index} onClick = {this.onClick.bind(this, {value})}>
                         <Subject key={index} text={value} color='#F39317'></Subject>

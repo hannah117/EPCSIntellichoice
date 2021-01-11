@@ -22,9 +22,7 @@ export default class addQuestion extends Component {
         }
 
     }
-
-  
-
+    
     onChangeTopic(e){
         this.setState({
             topic: e.target.value

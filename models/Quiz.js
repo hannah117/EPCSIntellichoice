@@ -4,6 +4,8 @@ const Schema = mongoose.Schema;
 const Question = require('../../models/Question');
 
 //create schema
+
+//This file would have similar purpose as Question.js file. However, we have been told by client quizzes are not currently necessary.
 const QuizSchema = new Schema ({
     
     topic:{

@@ -15,7 +15,9 @@ import topicPage from './pages/topicPage';
 import testing from './pages/testing';
 import getList from './pages/getList';
 import addition from './pages/addition';
+//other components and functions imported from folders/files
 
+//Route paths are to be added to end of url to view/test component. Ex. localhost:3000/topics will take you to the topics page
 
 function App() {
   let topicName = 'addition';

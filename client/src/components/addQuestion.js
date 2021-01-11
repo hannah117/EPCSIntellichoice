@@ -1,6 +1,10 @@
 import React, { Component} from 'react';
 import axios from 'axios';
 
+/**
+ * Temporary form to add questions to database from frontend of website. 
+ * Used to test frontend to database connection. Input is not validated. */
+
 export default class addQuestion extends Component {
     constructor(props){
         super(props);
