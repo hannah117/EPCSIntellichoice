@@ -1,6 +1,4 @@
-import react from 'react'
 import './style.css'
-import AddRoundedIcon from '@material-ui/icons/AddRounded';
 
 const Subject = ({text, symbol, color}) => {
     return (
