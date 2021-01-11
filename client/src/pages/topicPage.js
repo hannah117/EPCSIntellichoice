@@ -15,27 +15,24 @@ export default class topicPage extends Component{
         this.state = { grade: '2' , topics: [], questions: [], subtopics: []};
     }
 
+    //get indices of each unique value. Used to display topics list to user.
     onlyUnique(value, index, self) {
         return self.indexOf(value) === index;
       }
-      
+     
+    //retrieves question array from database.
     componentDidMount() {
         axios.get('./api/questions')
             .then(res => {
-          
-      
-                this.setState({ questions: res.data.filter(question => question.gradeLevel === this.state.grade)});
+                //reduces array to questions with selected grade level
+                this.setState({ questions: res.data.filter(question => question.gradeLevel === this.state.grade)}); 
+                //reduces array to questions with selected topic
                 this.setState({ topics: this.state.questions.map(a => a.topic) });
-    
             })
             .catch(function (error) {
                 console.log(error);
             })
-          
-
-
             this.setState({ topics: this.state.topics.filter(this.onlyUnique)});
-
           
     };
 
@@ -43,8 +40,8 @@ export default class topicPage extends Component{
    
 
     onClick = ({value}) =>{
-        //adjust questions to be passed according to value selected
-        this.setState({ subtopics: this.state.questions.filter(question => question.topic === value).map(a => a.subtopic) });
+    //adjust questions to be passed according to value selected
+    this.setState({ subtopics: this.state.questions.filter(question => question.topic === value).map(a => a.subtopic) });
     
     //route to next page
     this.props.history.push({                           //pushes topic, grade, and questions to /subtopics page

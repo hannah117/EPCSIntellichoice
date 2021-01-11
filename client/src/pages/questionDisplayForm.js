@@ -2,8 +2,9 @@ import React from 'react'
 import Banner from '../components/Banner';
 import Question from '../components/Question';
 import {Component} from "react";
-export default class Addition extends Component{
+export default class questionDisplayForm extends Component{
 
+//File is the display the question to use and accept answer input.
 
     constructor(props) {
         super(props);

@@ -17,33 +17,17 @@ export default class subTopicPage extends Component{
                      
     }}
 
-  /*  
-    assignSymbol(){
-      
-        var symbol;
-        if (this.state.topic === 'addition')
-        symbol = "+";
-        if (this.state.topic === 'subtraction')
-        symbol = "-";
-        if (this.state.topic === 'multiplication')
-        symbol = "*";
-        if (this.state.topic === 'division')
-        symbol = "/";
-        
-       return symbol;
-    }
-*/
+  
+    //see componentDidMount in topicPage.js
     componentDidMount() {
         let ques = [];
         axios.get('http://localhost:3000/api/questions')
             .then(res => {
-                console.log(this.state.topic);
                 ques = res.data;
                 ques = ques.filter(question =>question.gradeLevel === this.state.grade && question.topic === this.state.topic);
                 ques = ques.map(a => a.subtopic);
                 this.setState({ subtopics: ques });
-               // console.log('hello');
-               // console.log(ques);
+               
             })
             .catch(function (error) {
                 console.log(error);
@@ -53,48 +37,40 @@ export default class subTopicPage extends Component{
 
     onClick = ({value}) =>{
 
-
-       // this.setState({ subtopics: this.state.questions.filter(question => question.topic === value).map(a => a.subtopic) });
-      //  this.setState({ topics: this.state.questions.filter(question => question.topic === value).map(a => a.subtopic) });
-     
-    console.log(this.state.subtopics);
         //route to next page
         console.log(this.state.questions);
         var ques = this.state.questions.filter(question =>question.subtopic === value);
         ques = ques.filter(question => question.topic === this.state.topic);
         ques = ques[0];
-        console.log(ques.topic);
+   
         var min;
         var max;
         var color;
-       // console.log(ques.topic);
-        if(value === "Hundreds"){
 
+        /**Variable values for min, max, path, symbol have been hard coded. 
+         * These will be used for the randomly generated questions not
+         * from the database that were requested by client. */
+
+        if(value === "Hundreds"){
            min = 999;
            max = 999;
-
-
         }
         if(value === "Tens"){
-
-            min = 99;
+           min = 99;
            max = 99;
-
         }
         if(value === "Thousands"){
-
-            min = 9999;
+           min = 9999;
            max = 9999;
-
         }
         if(value === "Ones"){
-
         min = 9;
         max = 9;
-
         }
+
        var path;
        var symbol;
+
         if(ques.topic === "Subtraction"){
             path = "/subtraction";
             symbol = '-';
@@ -118,11 +94,9 @@ export default class subTopicPage extends Component{
 
         }
 
-     console.log(symbol);
-
-
+        //sends variable values to corresponding function so practice questions are displayed
         this.props.history.push({
-            pathname: path,
+            pathname: path, 
             state: {  symbol: symbol,
                       min: min,
                       max: max,
@@ -133,11 +107,11 @@ export default class subTopicPage extends Component{
     
 
     render(){
+        //see render of topicPage.js
         return (
             <>
             <Banner text="Practice" color='#4CAF50'></Banner>
-            
-          {console.log(this.state.topic)}
+
                 {this.state.subtopics.map((value,index)=> {
                  return <div style={{margin:'0 20%'}}>
                         <div class='subjectBox' key={index} onClick = {this.onClick.bind(this, {value})}>
