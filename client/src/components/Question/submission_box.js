@@ -9,10 +9,10 @@ const SubmissionBox = ({num1, num2, funct, answer}) => {
         console.log(answer);
         console.log(guess);
         
-
-        const correct = (answer == guess);
+        var result;
+        const correct = (answer === guess);
         if (correct) {
-            var result = document.getElementById("result");
+            result = document.getElementById("result");
             result.innerHTML = "Excellent Work!";
             result.style.fontSize = "50px";
             result.style.fontWeight = "bold";
@@ -20,7 +20,7 @@ const SubmissionBox = ({num1, num2, funct, answer}) => {
             window.location.reload();
         }
         else {
-            var result = document.getElementById("result");
+            result = document.getElementById("result");
             result.innerHTML = "Not quite, try again!";
             result.style.fontSize = "50px";
             result.style.fontWeight = "bold";
@@ -42,7 +42,6 @@ const SubmissionBox = ({num1, num2, funct, answer}) => {
             </Grid>
 
             <div id="result" style = {{margin: 'auto', align: 'center', textAlign: "center"}}>
-                <h1></h1>
             </div>
         </>
     )

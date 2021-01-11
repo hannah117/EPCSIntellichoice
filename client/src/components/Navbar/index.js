@@ -6,7 +6,6 @@ import {
   NavMenu,
   NavBtnLink
 } from './NavbarElements';
-import logo from '../../images/images.css';
 import intellichoice from '../../images/intellihoice-logo-512x512.png';
 
 
