@@ -10,7 +10,7 @@ Git is a powerful tool and you will most likely use it often in the near fortune
 
 ## Running the Project
 Run `npm install` in the base directory and go to the /client directory and run `npm install` there again.
-Then go back to the base directory and start it with `npm run dev`. The project should now be running on localhost:3000
+Then go back to the base directory (`cd ..`) and start it with `npm run dev`. The project should now be running on localhost:3000
 
 ## Tips
 * Refer to the past semester report to get a better understanding of the current project <br>
