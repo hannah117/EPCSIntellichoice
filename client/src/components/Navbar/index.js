@@ -8,7 +8,7 @@ import {
 } from './NavbarElements';
 import intellichoice from '../../images/intellihoice-logo-512x512.png';
 
-
+/* Navbar component */
 const Navbar = () => {
   return (
     <>
@@ -18,12 +18,14 @@ const Navbar = () => {
         </NavLink>
         <Bars />
         <NavMenu>
+          {/* Practice and Profile navigation */}
           <NavLink to='/practice' activeStyle>
             Practice
           </NavLink>
           <NavLink to='/profile' activeStyle>
             Profile
           </NavLink>
+          {/* Logout button */}
           <NavBtnLink to='/logout'>
             Quit
           </NavBtnLink>
